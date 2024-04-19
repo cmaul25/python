@@ -22,3 +22,9 @@ class Television():
             self.muted=True
         else:
             self.muted=False
+
+    def channel_up(self):
+        if self.channel!=Television.MAX_CHANNEL:
+            self.channel+=1
+        else:
+            self.channel=Television.MIN_CHANNEL
