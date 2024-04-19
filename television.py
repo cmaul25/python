@@ -18,13 +18,34 @@ class Television():
             self.status=False
 
     def mute(self):
-        if self.muted==False:
-            self.muted=True
-        else:
-            self.muted=False
+        if self.status == True:
+            if self.muted==False:
+                self.muted=True
+            else:
+                self.muted=False
 
     def channel_up(self):
-        if self.channel!=Television.MAX_CHANNEL:
-            self.channel+=1
-        else:
-            self.channel=Television.MIN_CHANNEL
+        if self.status==True:
+            if self.channel!=Television.MAX_CHANNEL:
+                self.channel+=1
+            else:
+                self.channel=Television.MIN_CHANNEL
+
+    def channel_down(self):
+        if self.status == True:
+            if self.channel!=Television.MIN_CHANNEL:
+                self.channel-=1
+            else:
+                self.channel=Television.MAX_CHANNEL
+
+    def volume_up(self):
+        if self.status == True:
+            self.muted==False
+            if self.volume!=Television.MAX_CHANNEL:
+                self.volume+=1
+
+    def volume_down(self):
+        if self.status == True:
+            self.muted == False
+            if self.volume!=Television.MIN_CHANNEL:
+                self.volume-=1
